@@ -116,6 +116,12 @@ class MyListView {
         });
         this.restructItems();
     }
+    cleanItems() {
+        let children = this.getItems();
+        for (let i = children.length - 1; i > -1; i--) {
+            this.pm.put(children[i]);
+        }
+    }
     restructItems() { // 重新调整布局
         if (this.dir == 'Vertical') {
             let children = this.content.getChildren();

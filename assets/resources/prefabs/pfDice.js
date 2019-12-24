@@ -49,7 +49,7 @@ cc.Class({
         let l = this.list[idx];
         this.bg.color = l.bgColor;
 
-        if (this.isTxt) {
+        if (l.txt) {
             this.txt.node.active = true;
             this.txt.node.color = l.color;
             this.txt.string = l.txt.replace(/\^p/g, '\n'); // ^p是回车符
@@ -77,9 +77,26 @@ cc.Class({
 
         this.txt.node.active = false;
         this.img.node.active = false;
-        this.isTxt = false;
-
     },
+    rollTo(parm) {
+        this.bg.color = parm.bgColor || cc.color(255, 255, 255);
+
+        let l = this.list[parm.idx];
+        if (parm.txt || l.txt) {
+            this.img.node.active = false;
+            this.txt.node.active = true;
+            this.txt.node.color = parm.color || cc.color(0, 0, 0);
+            this.txt.string = (parm.txt || l.txt).replace(/\^p/g, '\n'); // ^p是回车符
+        } else {
+
+            this.img.node.active = true;
+            this.img.node.rotation = parm.rotatoin || 0;
+            this.txt.node.active = false;
+            this.img.node.color = parm.color || cc.color(0, 0, 0);
+            this.img.spriteFrame = parm.color || l.sp;
+        }
+        return idx;
+    }
     // initDefault() { // 默认的骰子
     //     let bgColor = cc.color(255, 255, 255);
     //     let color = cc.color(0, 0, 0);
