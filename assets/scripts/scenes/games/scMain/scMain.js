@@ -28,6 +28,11 @@ cc.Class({
                 txt: '30\nRails XL',
                 game: 'ly30RailsXl',
                 delCb: this.delItem.bind(this)
+            },
+            {
+                txt: 'Avenue',
+                game: 'lyAvenue',
+                delCb: this.delItem.bind(this)
             }
         ];
 

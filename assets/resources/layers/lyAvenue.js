@@ -9,6 +9,7 @@ cc.Class({
         content: cc.Node,
 
         diceIt: cc.Node,
+        btnNew: cc.Node,
 
         spPath: [cc.SpriteFrame]
     },
@@ -27,16 +28,50 @@ cc.Class({
                 scrollview: this.scrollView,
                 content: this.content,
                 itemTpl: pfDice,
-                gapY: 10,
+                gapY: 20,
                 gapX: 14,
                 col: Math.floor(this.scrollView.node.width / (pfDice.width + 14)),
                 setItemsCb: this.setItemsCb.bind(this),
             });
+            this.reset();
         }, 300);
-        this.reset(items, true);
+
+        this.thePath = [this.spPath[0], this.spPath[0], this.spPath[0], this.spPath[0], this.spPath[1], this.spPath[1]];
+        this.theRotation = [-180, -90, 0, 90, 90, 0];
+
+
 
         ge.addClick(this.diceIt, () => {
+            // this.buildingList = buildingList;
+            // this.pathList = pathList;
+            // this.isNew = true;
+            // this.goldNum = 0;
+            if (this.isNew) { // 出建筑
+                this.goldNum = 0;
 
+                this.list.addItems(this.buildingList.shift());
+                this.isNew = false;
+            } else {
+                let item = this.pathList.shift();
+                this.list.addItems(item);
+                if (item.isgold) {
+                    if (++this.goldNum > 3) {
+                        this.isNew = true;
+                        this.btnNew.active = true;
+                        this.diceIt.active = false;
+                        ge.log(this.pathList.length);
+                        if (this.buildingList.length < 2) {
+                            this.btnNew.active = false;
+                            this.diceIt.active = false;
+                        }
+                    }
+                }
+            }
+        }, true);
+        ge.addClick(this.btnNew, () => {
+            this.list.cleanItems();
+            this.btnNew.active = false;
+            this.diceIt.active = true;
         }, true);
 
         ge.addClick(this.btnReset, () => {
@@ -48,33 +83,66 @@ cc.Class({
         ge.addClick(this.node, () => { });
     },
     reset() {
+        this.btnNew.active = true;
+        this.diceIt.active = false;
         this.list.cleanItems();
 
-        let buildingBgColor = cc.color(1, 1, 1);
+        let buildingBgColor = cc.color(135, 159, 255);
         let buildingList = [
-            { bgColor: pathBgColor, txt: 'A' },
-            { bgColor: pathBgColor, txt: 'B' },
-            { bgColor: pathBgColor, txt: 'C' },
-            { bgColor: pathBgColor, txt: 'D' },
-            { bgColor: pathBgColor, txt: 'E' },
-            { bgColor: pathBgColor, txt: 'F' }
+            { bgColor: buildingBgColor, txt: 'A' },
+            { bgColor: buildingBgColor, txt: 'B' },
+            { bgColor: buildingBgColor, txt: 'C' },
+            { bgColor: buildingBgColor, txt: 'D' },
+            { bgColor: buildingBgColor, txt: 'E' },
+            { bgColor: buildingBgColor, txt: 'F' }
         ];
 
-        let pathBgColor1 = cc.color(2, 2, 2);
-        let pathBgColor2 = cc.color(2, 2, 2);
+        let pathBgColor1 = cc.color(255, 215, 0); // gold
+        let pathBgColor2 = cc.color(192, 192, 192); // silver
 
-        let pathList = [];
-        for (let i = 0; i < 24; i++) {
+        let pathList = [], a, b, t;
+        for (let i = 0; i < 48; i++) {
+            let isgold = (i % 2 == 0);
             pathList.push({
-                bgColor: (i % 2 == 0) ? pathBgColor1 : pathBgColor2,
-                sp: this.spPath[Math.floor(i / 4)]
+                isgold: isgold,
+                bgColor: isgold ? pathBgColor1 : pathBgColor2,
+                sp: this.thePath[Math.floor(i / 8)],
+                angle: this.theRotation[Math.floor(i / 8)]
             });
         }
 
         // 打乱
+        for (let i = 0; i < 20; i++) {
+            a = Math.floor(buildingList.length * Math.random());
+            b = Math.floor(buildingList.length * Math.random());
+            if (a != b) {
+                t = buildingList[a];
+                buildingList[a] = buildingList[b];
+                buildingList[b] = t;
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            a = Math.floor(pathList.length * Math.random());
+            b = Math.floor(pathList.length * Math.random());
+            if (a != b) {
+                t = pathList[a];
+                pathList[a] = pathList[b];
+                pathList[b] = t;
+            }
+        }
+
+        this.buildingList = buildingList;
+        this.pathList = pathList;
+        this.isNew = true;
+        this.goldNum = 0;
     },
     setItemsCb(item, data, idx) {
-
+        let itemJs = ge.getJs(item);
+        if (itemJs) {
+            itemJs.init();
+            itemJs.rollTo(data);
+        }
     }
     // update (dt) {},
 });

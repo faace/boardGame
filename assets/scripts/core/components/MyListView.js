@@ -87,6 +87,7 @@ class MyListView {
         return this.content.getChildren();
     }
     addItems(datas) {
+        if (!Array.isArray(datas)) datas = [datas];
         let count = this.content.getChildrenCount();
         let lines = Math.ceil((count + datas.length) / this.col);
         this.content.height = lines * (this.itemHeight + this.gapY);

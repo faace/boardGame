@@ -49,13 +49,13 @@ cc.Class({
         let l = this.list[idx];
         this.bg.color = l.bgColor;
 
-        if (l.txt) {
+        if (l && l.txt) {
             this.txt.node.active = true;
             this.txt.node.color = l.color;
             this.txt.string = l.txt.replace(/\^p/g, '\n'); // ^p是回车符
         } else {
             this.img.node.active = true;
-            this.img.spriteFrame = l.sp;
+            this.img.spriteFrame = l && l.sp;
             this.img.node.color = l.color;
         }
         return idx;
@@ -82,7 +82,7 @@ cc.Class({
         this.bg.color = parm.bgColor || cc.color(255, 255, 255);
 
         let l = this.list[parm.idx];
-        if (parm.txt || l.txt) {
+        if (parm.txt || (l && l.txt)) {
             this.img.node.active = false;
             this.txt.node.active = true;
             this.txt.node.color = parm.color || cc.color(0, 0, 0);
@@ -90,12 +90,12 @@ cc.Class({
         } else {
 
             this.img.node.active = true;
-            this.img.node.rotation = parm.rotatoin || 0;
+            this.img.node.angle = -parm.angle || 0;
             this.txt.node.active = false;
             this.img.node.color = parm.color || cc.color(0, 0, 0);
-            this.img.spriteFrame = parm.color || l.sp;
+            this.img.spriteFrame = parm.sp || (l && l.sp);
         }
-        return idx;
+        // return idx;
     }
     // initDefault() { // 默认的骰子
     //     let bgColor = cc.color(255, 255, 255);
