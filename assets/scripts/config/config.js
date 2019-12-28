@@ -1,6 +1,6 @@
 var config = {
     name: '纸笔桌游',
-    enName: 'mines',
+    enName: 'board game',
     mode: 1, // 1: product, 2:debug
     version: '0.0.1', // 当前版本
     net: {

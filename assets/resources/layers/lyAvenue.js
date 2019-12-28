@@ -102,14 +102,15 @@ cc.Class({
 
         let pathList = [], a, b, t;
         for (let i = 0; i < 48; i++) {
-            let isgold = (i % 2 == 0);
+            let isSilver = (i % 2 == 0);
             pathList.push({
-                isgold: isgold,
-                bgColor: isgold ? pathBgColor1 : pathBgColor2,
+                isgold: !isSilver,
+                bgColor: !isSilver ? pathBgColor1 : pathBgColor2,
                 sp: this.thePath[Math.floor(i / 8)],
                 angle: this.theRotation[Math.floor(i / 8)]
             });
         }
+        // pathList.length = 48;
 
         // 打乱
         for (let i = 0; i < 20; i++) {
