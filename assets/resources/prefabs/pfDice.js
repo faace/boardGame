@@ -72,7 +72,7 @@ cc.Class({
             for (let i = 0; i < 6; i++) {
                 this.list.push({ sp: this.sf[i], color: color, bgColor: bgColor });
             }
-            this.list[0].color = this.list[3].color = cc.color(255, 0, 0);
+            if (!parm.color) this.list[0].color = this.list[3].color = cc.color(255, 0, 0);
         }
 
         this.txt.node.active = false;

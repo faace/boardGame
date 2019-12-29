@@ -33,6 +33,11 @@ cc.Class({
                 txt: 'Avenue',
                 game: 'lyAvenue',
                 delCb: this.delItem.bind(this)
+            },
+            {
+                txt: 'Harvest\nDice',
+                game: 'lyHarvestDice',
+                delCb: this.delItem.bind(this)
             }
         ];
 
@@ -40,7 +45,7 @@ cc.Class({
 
 
 
-        // ge.openLayer('ly30RailsXl');
+        // ge.openLayer('lyHarvestDice');
     },
     delItem(targetJs) {
         this.list.delItems(targetJs.node);
