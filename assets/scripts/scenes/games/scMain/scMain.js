@@ -38,7 +38,12 @@ cc.Class({
                 txt: 'Harvest\nDice',
                 game: 'lyHarvestDice',
                 delCb: this.delItem.bind(this)
-            }
+            },
+            {
+                txt: 'Qwixx',
+                game: 'lyQwixx',
+                delCb: this.delItem.bind(this)
+            },
         ];
 
         this.list.setItems(items, true);
