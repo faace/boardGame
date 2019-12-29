@@ -84,10 +84,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 12
+        "__id__": 13
       },
       {
-        "__id__": 13
+        "__id__": 14
       }
     ],
     "_prefab": null,
@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        425.5133972167969,
+        415.8816223144531,
         0,
         0,
         0,
@@ -253,10 +253,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 10
+        "__id__": 11
       },
       {
-        "__id__": 11
+        "__id__": 12
       }
     ],
     "_prefab": null,
@@ -403,7 +403,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "label2",
+    "_name": "notice",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -413,6 +413,9 @@
     "_components": [
       {
         "__id__": 9
+      },
+      {
+        "__id__": 10
       }
     ],
     "_prefab": null,
@@ -426,8 +429,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 560,
-      "height": 210.4
+      "width": 700,
+      "height": 56.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -439,7 +442,7 @@
       "ctor": "Float32Array",
       "array": [
         0,
-        -198.3679962158203,
+        -311.75,
         0,
         0,
         0,
@@ -477,10 +480,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。\n",
-    "_N$string": "抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。\n",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_string": "抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。",
+    "_N$string": "抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。",
+    "_fontSize": 25,
+    "_lineHeight": 25,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "b36e1360-808f-4835-a20b-cbc4f62c42ed"
@@ -494,6 +497,33 @@
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "27Nb3wziJIl5d0yvwYqrGy"
+  },
+  {
+    "__type__": "cc.Widget",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "alignMode": 1,
+    "_target": null,
+    "_alignFlags": 4,
+    "_left": 0,
+    "_right": 0,
+    "_top": 0,
+    "_bottom": 20,
+    "_verticalCenter": 0,
+    "_horizontalCenter": 0,
+    "_isAbsLeft": true,
+    "_isAbsRight": true,
+    "_isAbsTop": true,
+    "_isAbsBottom": true,
+    "_isAbsHorizontalCenter": true,
+    "_isAbsVerticalCenter": true,
+    "_originalWidth": 0,
+    "_originalHeight": 0,
+    "_id": "79wkFmd6lMzKgrrFKcGjtt"
   },
   {
     "__type__": "cc.Sprite",
