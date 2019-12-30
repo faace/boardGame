@@ -44,6 +44,11 @@ cc.Class({
                 game: 'lyQwixx',
                 delCb: this.delItem.bind(this)
             },
+            {
+                txt: 'Railroad\nInk',
+                game: 'lyRailroadInk',
+                delCb: this.delItem.bind(this)
+            },
         ];
 
         this.list.setItems(items, true);

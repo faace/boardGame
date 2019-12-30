@@ -38,6 +38,11 @@ cc.Class({
         }
 
         ge.addClick(this.diceIt, () => {
+            this.list.forEach(one => {
+                ge.log(one.node + (one.node.active == true ? 1 : 0));
+                one.node.active = true;
+                ge.log(one.node + (one.node.active == true ? 1 : 0));
+            }, true);
             if (this.isHide) {
                 this.hideNode(true);
                 this.list.forEach(one => {
@@ -46,7 +51,7 @@ cc.Class({
                 return;
             }
             this.list.forEach(one => {
-                one.rollAction();
+                one.rollAction2();
             });
         }, true);
 
@@ -57,6 +62,15 @@ cc.Class({
         ge.addClick(this.btnClose, () => {
             this.node.destroy();
         }, true);
+        ge.addClick(this.list[0].node, () => { this.list[0].node.active = false }, true);
+        ge.addClick(this.list[1].node, () => { this.list[1].node.active = false }, true);
+        ge.addClick(this.list[2].node, () => { this.list[2].node.active = false }, true);
+        ge.addClick(this.list[3].node, () => { this.list[3].node.active = false }, true);
+        ge.addClick(this.list[4].node, () => { this.list[4].node.active = false }, true);
+        ge.addClick(this.list[5].node, () => { this.list[5].node.active = false }, true);
+        ge.addClick(this.list[6].node, () => { this.list[6].node.active = false }, true);
+        ge.addClick(this.list[7].node, () => { this.list[7].node.active = false }, true);
+        ge.addClick(this.list[8].node, () => { this.list[8].node.active = false }, true);
         ge.addClick(this.node, () => { });
 
 
