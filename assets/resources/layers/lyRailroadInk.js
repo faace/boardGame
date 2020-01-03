@@ -19,7 +19,7 @@ cc.Class({
 
         this.list = [];
         for (let i = 0; i < 4; i++) {
-            for (; i < 2; i++) {
+            for (; i < 3; i++) {
                 let pfDice = cc.instantiate(ge.pfDice);
                 pfDice.parent = this.dices[i];
                 let pfDiceJs = ge.getJs(pfDice);
@@ -46,9 +46,9 @@ cc.Class({
                         { sf: this.pictures[6] },
                         { sf: this.pictures[7] },
                         { sf: this.pictures[8] },
-                        { sf: this.pictures[9] },
-                        { sf: this.pictures[10] },
-                        { sf: this.pictures[11] },
+                        { sf: this.pictures[6] },
+                        { sf: this.pictures[7] },
+                        { sf: this.pictures[8] },
                     ]
                 });
                 this.list.push(pfDiceJs);
