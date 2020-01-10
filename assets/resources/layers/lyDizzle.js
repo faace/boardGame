@@ -65,6 +65,9 @@ cc.Class({
         ge.addClick(this.node, () => { });
     },
     diceInit(dice) {
+        this.list.forEach((one, idx) => {
+            one.node.destroy();
+        });
         this.list = [];
         let length = dice.length;
         for (let i = 0; i < length; i++) {
