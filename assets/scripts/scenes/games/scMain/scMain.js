@@ -54,6 +54,11 @@ cc.Class({
                 game: 'lyDizzle',
                 delCb: this.delItem.bind(this)
             },
+            {
+                txt: 'Railroad\nInk: Deep\nBlue Edition',
+                game: 'lyRRIDBE',
+                delCb: this.delItem.bind(this)
+            },
         ];
 
         this.list.setItems(items, true);
