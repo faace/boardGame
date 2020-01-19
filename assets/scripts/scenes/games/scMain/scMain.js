@@ -9,6 +9,11 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onInit() {
+        setTimeout(() => {
+            this.initList();
+        }, 100);
+    },
+    initList() {
         this.list = ge.listView({
             scrollview: this.scrollView,
             content: this.content,
