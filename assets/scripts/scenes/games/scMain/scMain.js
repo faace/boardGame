@@ -69,11 +69,11 @@ cc.Class({
                 game: 'lyMuseum',
                 delCb: this.delItem.bind(this)
             },
-            // {
-            //     txt: 'Rolling America',
-            //     game: 'lyRollingAmerica',
-            //     delCb: this.delItem.bind(this)
-            // },
+            {
+                txt: 'Rolling\nAmerica',
+                game: 'lyRollingUSA',
+                delCb: this.delItem.bind(this)
+            },
         ];
 
         this.list.setItems(items, true);
