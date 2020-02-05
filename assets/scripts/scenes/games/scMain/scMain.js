@@ -55,15 +55,25 @@ cc.Class({
                 delCb: this.delItem.bind(this)
             },
             {
+                txt: 'Railroad\nInk: Deep\nBlue Edition',
+                game: 'lyRRIDBE',
+                delCb: this.delItem.bind(this)
+            },
+            {
                 txt: 'Dizzle',
                 game: 'lyDizzle',
                 delCb: this.delItem.bind(this)
             },
             {
-                txt: 'Railroad\nInk: Deep\nBlue Edition',
-                game: 'lyRRIDBE',
+                txt: 'Ada Lovelace: Consulting Mathematicia',
+                game: 'lyMuseum',
                 delCb: this.delItem.bind(this)
             },
+            // {
+            //     txt: 'Rolling America',
+            //     game: 'lyRollingAmerica',
+            //     delCb: this.delItem.bind(this)
+            // },
         ];
 
         this.list.setItems(items, true);

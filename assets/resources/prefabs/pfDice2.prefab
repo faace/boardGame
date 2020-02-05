@@ -185,7 +185,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "26190d35-7926-43dc-8008-7202528b7a15"
+      "__uuid__": "454c4df4-c287-4236-adce-1e46c277c4c7"
     },
     "fileId": "45iJIv0jlA6bO1Z1XDOO3Z",
     "sync": false
@@ -292,7 +292,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "26190d35-7926-43dc-8008-7202528b7a15"
+      "__uuid__": "454c4df4-c287-4236-adce-1e46c277c4c7"
     },
     "fileId": "2duyLnhBNJkZDBZNcmK3Ja",
     "sync": false
@@ -375,8 +375,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "生气的绵羊",
-    "_N$string": "生气的绵羊",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -399,13 +399,13 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "26190d35-7926-43dc-8008-7202528b7a15"
+      "__uuid__": "454c4df4-c287-4236-adce-1e46c277c4c7"
     },
     "fileId": "318QEoqsRJfrgpfHKsAakj",
     "sync": false
   },
   {
-    "__type__": "c6a8eRYGotMW41+13DyikO/",
+    "__type__": "ebd27Ck7f1AiLuy6Q8aUTsU",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -449,7 +449,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "26190d35-7926-43dc-8008-7202528b7a15"
+      "__uuid__": "454c4df4-c287-4236-adce-1e46c277c4c7"
     },
     "fileId": "898w1y5INC/rpg4OkGVBbw",
     "sync": false

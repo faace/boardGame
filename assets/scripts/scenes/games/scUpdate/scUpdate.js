@@ -34,7 +34,15 @@ cc.Class({
                 cc.loader.loadRes('prefabs/pfItem', cc.Prefab, (err, prefab) => {
                     if (prefab && prefab._uuid) {
                         ge.pfItem = prefab;
-                        cb(false);
+
+                        cc.loader.loadRes('prefabs/pfDice2', cc.Prefab, (err, prefab) => {
+                            if (prefab && prefab._uuid) {
+                                ge.pfDice2 = prefab;
+
+                                cb(false);
+                            } else cb(true);
+                        });
+
                     } else cb(true);
                 });
 
